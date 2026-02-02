@@ -8,6 +8,6 @@ The processed data (bigwigs, bed, counts...) used in all the downstream analysis
 
 ## Reference
 
-de Haro-Blázquez R., Tomás-Daza L., Fanlo-Escudero L. et al. <br/>
+de Haro-Blázquez R., Tomás-Daza L., Fanlo-Escudero L. _et al._ <br/>
 Three-Dimensional Epigenome Roadmap of Human B-cell Differentiation Uncovers Mechanisms of Humoral Immunity and Oncogenesis. <br/>
 bioRxiv (2025). [doi:10.64898/2025.12.22.695871](https://www.biorxiv.org/content/10.64898/2025.12.22.695871v1)
