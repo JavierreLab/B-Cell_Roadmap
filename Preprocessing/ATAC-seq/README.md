@@ -22,8 +22,11 @@ Here, you can find a detailed description of how ATAC-seq data were processed in
 5. **Peak Calling**: HMMRATAC
 
 
-The steps 1-4 were performed for the CUT&RUN data. A detailed description of these steps can be found [here](https://github.com/JavierreLab/B-Cell_Roadmap/tree/main/Preprocessing/CUT%26RUN).
+Steps 1-4 were performed as for the CUT&RUN data. A detailed description of these steps can be found [here](https://github.com/JavierreLab/B-Cell_Roadmap/tree/main/Preprocessing/CUT%26RUN).
 
 ## 5. Peak Calling
 
+```bash
+macs3 hmmratac -i $BAM -n ${PREFIX} --outdir $OUTDIR/peaks
+```
 
