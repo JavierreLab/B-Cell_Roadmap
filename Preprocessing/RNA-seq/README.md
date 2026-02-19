@@ -16,8 +16,13 @@ Here, you can find a detailed description of how RNA-seq data were processed in 
 
 1. **Trimming and Quality**: Trim Galore, samtools and FastQC
 2. **Alignment**: Bowtie2 
-3. **Counting**: sambamba and featureCounts
+3. **Counting**: sambamba and featureCounts (with slight modification due to version software changes)*
 4. **Differential Analysis**: DESeq2
 
 
 A detailed description of how steps 1-4 were performed can be found [here](https://github.com/JavierreLab/p53/tree/main/preprocessing/RNA), the github page associated to Serra, F *et al.* p53 rapidly restructures 3D chromatin organization to trigger a transcriptional response. *Nature Communications* **15**, 2821 (2024). [https://doi.org/10.1038/s41467-024-46666-1](https://doi.org/10.1038/s41467-024-46666-1)
+
+## 3. Counting *
+In `featureCounts`, the following arguments were added:
+* `-O` Reads falling into overlapping regions (genes) were assigned to as many regions they overlap.
+* `--countReadPairs` Due to `featureCounts` version software changes (Subread: v2.0.2), this argument must be specified in order to count pair of reads (instead of individual reads)
