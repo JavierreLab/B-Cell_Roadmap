@@ -15,6 +15,7 @@ Here, you can find a detailed description of how CUT&RUN data were processed in 
 * [DESeq2 (R package)](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)
 * [ChromHMM](https://ernstlab.github.io/ChromHMM/)
 * [ChromTime](https://github.com/ernstlab/ChromTime)
+* [ROSE](http://younglab.wi.mit.edu/super_enhancer_code.html)
 
 
 
@@ -27,6 +28,7 @@ Here, you can find a detailed description of how CUT&RUN data were processed in 
 5. **Generating Peakmatrix**: csaw and GenomicRanges
 6. **Generating Background Matrix**: csaw and GenomicRanges
 7. **Chromatin Segmentation**: ChromHMM and ChromTime
+8. **Super Enhancer Identification**: ROSE
 
 A detailed description of how steps 1-4 were performed can be found [here](https://github.com/JavierreLab/liCHiC/tree/main/3.ChIPseq%20Processing), the GitHub page associated to Tomás-Daza, L *et al.* Low input capture Hi-C (liCHi-C) identifies promoter-enhancer interactions at high-resolution. *Nature Communications* **14**, 268 (2023). [https://doi.org/10.1038/s41467-023-35911-8](https://doi.org/10.1038/s41467-023-35911-8)
 We follow mostly the same logic as for a ChIP-seq experiment.
@@ -150,3 +152,35 @@ java -mx20000M -jar ChromHMM.jar LearnModel \
 
 ```
 Finally, emission matrix obtained was annotated based on prior biological knowledge to relabel the 15 states into biologically meaningful chromatin state categories.
+
+## 8. Super Enhancer Identification
+
+### Overview
+
+This section describes the workflow to define super enhancers, starting from H3K27ac and IgG filtered BAM files and active enhancers defined after ChromHMM processing. This pipeline was run in a conda environment using:
+- python 2.7.18
+- samtools 1.19.2
+- R 4.3.2
+  
+
+### 8.1. Prepare input files
+
+ROSE requires two types of input files:
+- **BAM files**: we used **H3K27ac** and **IgG** merged for each cell type. Remember that ROSE requires that .bam files have chromosome IDs starting with "chr" and that they are sorted and indexed.
+- **GFF of constituent enhancers**: regions defined as open active enhancers. In this case, we used active enhancers overlapping ATAC-seq peaks for each cell type. GFF file must be formatted as explained in the ROSE manual.
+  
+
+### 8.2. Run ROSE
+
+We run ROSE for each cell type following the commands:
+
+```
+python ROSE_main.py -g HG38 \
+-i $Celltype_OpenActiveEnhancer.gff \
+-r $Celltype_H3K27ac.bam \
+-c $Celltype_IgG.bam \
+-o Celltype \
+-s 12500 \
+-t 2500
+
+```
