@@ -172,14 +172,14 @@ ROSE requires two types of input files:
 
 ### 8.2. Run ROSE
 
-We run ROSE for each cell type following the commands:
+We run ROSE for each cell type following this command:
 
 ```
 python ROSE_main.py -g HG38 \
 -i $Celltype_OpenActiveEnhancer.gff \
 -r $Celltype_H3K27ac.bam \
 -c $Celltype_IgG.bam \
--o Celltype \
+-o $Celltype_output_directory \
 -s 12500 \
 -t 2500
 
