@@ -31,7 +31,7 @@ Here, you can find a detailed description of how CUT&RUN data were processed in 
 7. **Chromatin Segmentation**: ChromHMM and ChromTime
 8. **Super Enhancer Identification**: ROSE
 
-A detailed description of how steps 1-4 were performed can be found [here](https://github.com/JavierreLab/liCHiC/tree/main/3.ChIPseq%20Processing), the GitHub page associated to Tomás-Daza, L *et al.* Low input capture Hi-C (liCHi-C) identifies promoter-enhancer interactions at high-resolution. *Nature Communications* **14**, 268 (2023). [https://doi.org/10.1038/s41467-023-35911-8](https://doi.org/10.1038/s41467-023-35911-8)
+A detailed description of how steps 1-4 were performed can be found [here](https://github.com/JavierreLab/liCHiC/tree/main/3.ChIPseq%20Processing), the GitHub page associated with Tomás-Daza, L *et al.* Low input capture Hi-C (liCHi-C) identifies promoter-enhancer interactions at high-resolution. *Nature Communications* **14**, 268 (2023). [https://doi.org/10.1038/s41467-023-35911-8](https://doi.org/10.1038/s41467-023-35911-8)
 We follow mostly the same logic as for a ChIP-seq experiment.
 
 ## 2. Alignment*
@@ -64,9 +64,9 @@ featureCounts -a promoter_saf.bed -F SAF -O -p -d 0 -D 10000 -T 30 -o CUTnRUN_H3
 
 ## 6. Background Matrix
 
-A detailed description of how this step were performed can be found [here]([https://github.com/JavierreLab/liCHiC/tree/main/3.ChIPseq%20Processing](https://github.com/JavierreLab/p53/tree/main/preprocessing/ChIP#6-generating-peakmatrix)), the github page associated to Serra, F *et al.* p53 rapidly restructures 3D chromatin organization to trigger a transcriptional response. *Nature Communications* **15**, 2821 (2024). [https://doi.org/10.1038/s41467-024-46666-1](https://doi.org/10.1038/s41467-024-46666-1)
+A detailed description of how this step was performed can be found [here](https://github.com/JavierreLab/p53/tree/main/preprocessing/ChIP#6-generating-peakmatrix), the github page associated with Serra, F *et al.* p53 rapidly restructures 3D chromatin organization to trigger a transcriptional response. *Nature Communications* **15**, 2821 (2024). [https://doi.org/10.1038/s41467-024-46666-1](https://doi.org/10.1038/s41467-024-46666-1)
 
-We did slight modifications, we used the ChromHMM binarization as a proxy of peaks to define the background. The explanation on how to obtain the bed from the binarization is in section [7.3.3.](https://github.com/JavierreLab/B-Cell_Roadmap/tree/main/Preprocessing/CUT%26RUN#733-generating-peaks-bed-files-from-binarization)
+We did slight modifications; we used the ChromHMM binarization as a proxy of peaks to define the background. The explanation on how to obtain the bed from the binarization is in section [7.3.3.](https://github.com/JavierreLab/B-Cell_Roadmap/tree/main/Preprocessing/CUT%26RUN#733-generating-peaks-bed-files-from-binarization)
 
 ## 7. Chromatin Segmentation
 
