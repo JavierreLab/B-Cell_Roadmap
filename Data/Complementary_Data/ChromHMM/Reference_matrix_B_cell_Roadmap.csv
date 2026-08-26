@@ -1,0 +1,16 @@
+States,H3K4me3,H3K27ac,H3K4me1,H3K9me3,H3K27me3,Full_name,Color,States_Num
+AP,T,T,F,F,F,Active_Promoter,"54,205,96",1
+PrP,T,F,F,F,F,Primed_Promoter,"38,197,163",2
+PoP,T,F,F,F,T,Poised_Promoter,"37,150,133",3
+AE,F,T,T,F,F,Active_Enhancer,"193,21,59",4
+AE,T,T,T,F,F,Active_Enhancer,"193,21,59",5
+PrE,F,F,T,F,F,Primed_Enhancer,"181,93,68",6
+PrE,T,F,T,F,F,Primed_Enhancer,"181,93,68",7
+PoE,F,F,T,F,T,Poised_Enhancer,"138,72,108",8
+PoE,T,F,T,F,T,Poised_Enhancer,"138,72,108",9
+PRC2,F,F,F,F,T,PRC2,"86,155,199",10
+Het,F,F,F,T,F,Heterochromatin,"71,80,159",11
+Low_cov,F,F,F,T,T,Low_coverage,"160,159,159",12
+Low_cov,F,F,T,T,F,Low_coverage,"160,159,159",13
+Low_cov,F,T,F,F,F,Low_coverage,"160,159,159",14
+Quiescent,F,F,F,F,F,Quiescent,"217,217,217",15
